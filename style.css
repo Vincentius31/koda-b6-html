@@ -373,4 +373,33 @@ button{
     text-decoration: none;
 }
 
+.map-section{
+    width: 1100px;
+    margin: 120px auto;
+    text-align: center;
+}
+
+.map-head h2{
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.map-head span{
+    color: #c78a2b;
+}
+
+.map-head p{
+    font-size: 13px;
+    color: #8b8b8b;
+    max-width: 520px;
+    margin: 0 auto 50px;
+    line-height: 1.5;
+}
+
+.map-image img{
+    width: 100%;
+    max-width: 900px;
+    opacity: 0.9;
+}
 
