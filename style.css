@@ -329,7 +329,6 @@ button{
 
 .fav-item {
     background: #fff;
-    border-radius: 14px;
     padding: 18px 16px 22px;
     box-shadow: 0 10px 24px rgba(0,0,0,0.08);
 }
@@ -338,7 +337,6 @@ button{
     width: 100%;
     height: 140px;
     object-fit: cover;
-    border-radius: 10px;
     margin-bottom: 14px;
 }
 
@@ -401,5 +399,74 @@ button{
     width: 100%;
     max-width: 900px;
     opacity: 0.9;
+}
+
+.testi-section{
+    width: 100%;
+    background: linear-gradient(to right, #1c1c1c, #000);
+    padding: 120px 0;
+}
+
+.testi-box{
+    width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 45% 55%;
+    align-items: center;
+}
+
+.testi-image img{
+    width: 100%;
+}
+
+.testi-content{
+    color: #ffff;
+    padding-left: 60px;
+}
+
+.testi-label{
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #777C82;
+    margin-bottom: 100px;
+}
+
+.testi-name{
+    font-size: 50px;
+    margin: 10px 0 4px;
+}
+
+.testi-role{
+    font-size: 13px;
+    color:#FF8906;
+    margin-bottom: 20px;
+}
+
+.testi-text{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #dddd;
+    max-width: 460px;
+    margin-bottom: 20px;
+}
+
+.testi-rating{
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffff;
+    margin-bottom: 30px;
+}
+
+.testi-rating img{
+    width: 200px;
+    vertical-align: middle;
+    margin-right: 6px;
+    padding-right: 10px;
+}
+
+.nav-prev{
+    background: #333;
+    color: #fff;
 }
 
