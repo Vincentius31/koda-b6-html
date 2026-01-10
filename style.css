@@ -552,3 +552,36 @@ button{
 .footer-social img{
     width: 28px;
 }
+
+.banner-section{
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+}
+
+.banner-section img{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    padding-top: 80px;
+    object-fit: cover;
+}
+
+.banner-overlay{
+    position: absolute;
+    top: 45%;
+    left: 8%;
+    transform: translateY(-50%);
+    color: #ffff;
+    z-index: 2;
+}
+
+.banner-overlay h1{
+    font-weight: 500;
+    font-size: 40px;
+}
+
+
