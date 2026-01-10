@@ -472,9 +472,11 @@ button{
 
 .footer-section{
     background: #f8f8f8;
-    padding: 80px 0;
+    padding: 150px 0;
     font-size: 13px;
     color: #555;
+    padding-left: 100px;
+
 }
 
 .footer-content{
