@@ -897,26 +897,6 @@ button{
     margin-top: 30px;
 }
 
-.box-header {
-    margin-bottom: 20px;
-}
-
-.box-header h3 {
-    float: left;
-}
-
-.box-header span {
-    float: right;
-    color: #999;
-}
-
-.box-header::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-
 .chart {
     width: 100%;
 }
