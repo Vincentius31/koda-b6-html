@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+body{
+    background-color: #fff;
+}
+
+.left-image{
+    width: 45%;
+    height: 100%;
+    float: left;
+}
+
+.left-image img{
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.right-form{
+    width: 55%;
+    height: 100%;
+    float: left;
+    padding: 50px 70px;
+}
+
+.logo{
+    width: 120px;
+    margin-bottom: 30px;
+}
+
+.right-form h2{
+    color: #8b5e3c;
+    margin-bottom: 5px;
+}
+
+.form-alert{
+    color: #777;
+    margin-bottom: 30px;
+}
+
+label{
+    font-size: 14px;
+    display: block;
+    margin-bottom: 6px;
+    margin-top: 15px;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 45px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.input-box img{
+    position: absolute;
+    width: 18px;
+    top: 13px;
+    left: 12px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding-left: 45px;
+    outline: none;
+}
+
+button{
+    width: 100%;
+    height: 45px;
+    margin-top: 25px;
+    background:#FF8906;
+    border: none;
+    color: #0B132A;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+.login-question{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login-question a{
+    color: #FF8906;
+    text-decoration: none;
+}
+
+.or{
+    text-align: center;
+    margin: 25px 0;
+    color: #AAAAAA;
+}
+
+.social-account{
+    width: 100%;
+    margin-top: 10px;
+    overflow: 10px;
+    text-align: center;
+}
+
+.social-box{
+    width: 48%;
+    height: 45px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    line-height: 45px;
+    margin: 5px;
+    text-align: center;
+    float: left;
+}
+
+.social-box img{
+    width: 18px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
