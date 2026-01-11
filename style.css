@@ -832,7 +832,6 @@ button{
     width: 180px;
 }
 
-/* MAIN */
 .main {
     margin-left: 220px;
     padding: 20px;
@@ -840,7 +839,6 @@ button{
     min-height: 900px;
 }
 
-/* TOP BAR */
 .topbar {
     height: 50px;
     text-align: right;
@@ -858,7 +856,6 @@ button{
     border-radius: 50%;
 }
 
-/* CARDS */
 .cards {
     margin-top: 20px;
 }
@@ -880,11 +877,19 @@ button{
     margin: 10px 0;
 }
 
-.green { background: #6cc070; }
-.blue { background: #6b6bd6; }
-.purple { background: #c472b8; }
+.green { 
+    background: #6cc070; 
+}
 
-/* BOX */
+.blue { 
+    background: #6b6bd6; 
+}
+
+.purple { 
+    background: #c472b8; 
+}
+
+
 .box {
     background: #fff;
     border-radius: 10px;
@@ -911,12 +916,12 @@ button{
     clear: both;
 }
 
-/* CHART */
+
 .chart {
     width: 100%;
 }
 
-/* TABLE */
+
 table {
     width: 100%;
     border-collapse: collapse;
