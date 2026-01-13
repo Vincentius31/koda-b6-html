@@ -1317,9 +1317,9 @@ th, td {
 
 .history-order {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
-  margin-top: 90px;
+  margin-top: 80px;
   padding: 30px;
 }
 
@@ -1414,12 +1414,6 @@ th, td {
   text-decoration: none;
 }
 
-.order-meta {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
 .status {
   background: #ffe6c7;
   color: #f7931e;
@@ -1461,7 +1455,32 @@ th, td {
   cursor: pointer;
 }
 
+/* detail-order */
 
+.detail-order{
+    padding: 50px;
+    margin-top: 100px;
+}
+
+.detail-order h1{
+    padding-bottom: 10px;
+}
+
+.detail-order p{
+    padding-bottom: 50px;
+}
+
+.invoice{
+    display: flex;
+    flex-grow: 1;
+    gap:30%;
+}
+
+.your-order{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
 
 
 
