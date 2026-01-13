@@ -9,7 +9,7 @@ body{
     background-color: #fff;
 }
 
-/* register.html */
+/* register.html, login.html, forgot-pass.html */
 .register-container {
     display: flex;
     align-items: stretch;
