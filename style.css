@@ -540,9 +540,8 @@ body{
     padding-right: 10px;
 }
 
-.nav-prev{
-    background: #333;
-    color: #fff;
+.slider{
+    margin-top: 30px;
 }
 
 .footer-section{
