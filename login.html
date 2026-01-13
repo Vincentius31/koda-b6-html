@@ -3,53 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Coffee Shop</title>
-    <link rel="stylesheet" href="style2.css">
+    <title>Login | Coffee Shop</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="left-image">
-            <img src="img/Rectangle 290.png" alt="Coffee on the Nature">
-        </div>
 
-    <div class="right-form">
-        <img src="img/Logo-Brown.png" class="logo" alt="Company Logo Brown">
-        <h2>Login</h2>
-        <p class="form-alert">Fill out the form correctly</p>
+<div class="register-container">
+    <div class="register-image">
+        <img src="img/Rectangle 290.png" alt="Coffee">
+    </div>
 
-        <form>
-            <label>Email</label>
-            <div class="input-box">
-                <img src="img/icon/mail.png">
-                <input type="text" placeholder="Enter Your Email">
-            </div>
-            <label>Password</label>
-            <div class="input-box">
-                <img src="img/icon/Password.png">
-                <input type="password" placeholder="Enter Your Password">
-            </div>
-            <label style="padding-left: 447px; color: orange;">Lupa Password?</label>
-            <button type="submit">Register</button>
-        </form>
+    <div class="register-form">
+        <div class="form-wrapper">
+            <img src="img/icon/Logo-Brown.png" alt="Coffee Shop" class="logo">
 
-        <p class="login-question">
-            Have An Account? <a href="#">Login</a>
-        </p>
+            <h2>Login</h2>
+            <p class="content">Fill out the form correctly</p>
 
-        <div class="or">Or</div>
+            <form>
+                <div class="form-group">
+                    <label>Email</label>
+                    <div class="input-box">
+                        <img src="img/icon/mail.png">
+                        <input type="email" placeholder="Enter Your Email">
+                    </div>
+                </div>
 
-        <div class="social-account">
-            <div class="social-box">
-                <img src="img/icon/bx_bxl-facebook-circle.png">Facebook
-            </div>
-            <div class="social-box">
-                <img src="img/icon/flat-color-icons_google.png">Google
-            </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="input-box">
+                        <img src="img/iconPassword.png">
+                        <input type="password" placeholder="Enter Your Password">
+                        <img src="img/icon/EyeSlash.png" class="eye">
+                    </div>
+                </div>
+
+                <a href="#" class="forgot-pass">Lupa Password</a>
+
+                <button class="btn-register">Login</button>
+
+                <p class="login-text">
+                    Not Have An Account? <a href="#">Register</a>
+                </p>
+
+                <div class="social-login">
+                    <a href="#" class="social facebook">
+                        <img src="img/bx_bxl-facebook-circle.png"> Facebook
+                    </a>
+                    <a href="#" class="social google">
+                        <img src="img/flat-color-icons_google.png"> Google
+                    </a>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
 </body>
 </html>
