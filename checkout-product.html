@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Coffee Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header-product">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <img src="img/Logo-White.png" alt="Logo-White">
+            </div>
+            <div class="navbar-menu">
+                <a href="#" class="active">Home</a>
+                <a href="#">Product</a>
+            </div>
+            <div class="navbar-right">
+                <img src="img/icon/Search.png" class="nav-icon" alt="">
+                <img src="img/icon/ShoppingCart.png" class="nav-icon" alt="">
+                <a href="#" class="signin">Sign In</a>
+                <a href="" class="signup">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="payment-details">
+
+        <h1>Payment Details</h1>
+
+        <div class="payment-grid">
+
+            <div class="left">
+            <div class="order-header">
+                <h3>Your Order</h3>
+                <button class="btn-add">+ Add Menu</button>
+            </div>
+
+            <div class="order-card">
+                <img src="img/image 31.png" alt="Hazelnut Latte">
+
+                <div class="order-info">
+                    <span class="badge-sale">FLASH SALE!</span>
+                    <h4>Hazelnut Latte</h4>
+                    <p>2pcs | Regular | Ice | Dine In</p>
+
+                    <div class="price">
+                        <span class="old">IDR 40.000</span>
+                        <span class="new">IDR 20.000</span>
+                    </div>
+                </div>
+
+                <button class="remove">✕</button>
+            </div>
+
+            <div class="order-card">
+                <img src="img/image 31.png" alt="Hazelnut Latte">
+
+                <div class="order-info">
+                    <span class="badge-sale">FLASH SALE!</span>
+                    <h4>Hazelnut Latte</h4>
+                    <p>2pcs | Regular | Ice | Dine In</p>
+
+                <div class="price">
+                    <span class="old">IDR 40.000</span>
+                    <span class="new">IDR 20.000</span>
+                </div>
+            </div>
+
+                <button class="remove">✕</button>
+            </div>
+
+            <div class="payment-info">
+                <h3>Payment Info & Delivery</h3>
+
+                <label>Email</label>
+                <input type="email" placeholder="Enter Your Email">
+
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter Your Full Name">
+
+                <label>Address</label>
+                <input type="text" placeholder="Enter Your Address">
+
+                <label>Delivery</label>
+                <div class="delivery">
+                <button class="active">Dine in</button>
+                <button>Door Delivery</button>
+                <button>Pick Up</button>
+                </div>
+            </div>
+
+        </div>
+
+            <div class="right">
+            <h3>Total</h3>
+
+            <div class="row">
+                <span>Order</span>
+                <span>Idr. 40.000</span>
+            </div>
+            <div class="row">
+                <span>Delivery</span>
+                <span>Idr. 0</span>
+            </div>
+            <div class="row">
+                <span>Tax</span>
+                <span>Idr. 4000</span>
+            </div>
+
+            <hr>
+
+            <div class="row total">
+                <span>Sub Total</span>
+                <span>Idr. 44.000</span>
+            </div>
+
+            <button class="checkout">Checkout</button>
+
+            <p class="note">*Get Discount if you pay with Bank Central Asia</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
