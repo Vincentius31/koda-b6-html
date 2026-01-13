@@ -188,6 +188,8 @@ body{
     }
 }
 
+/* index.html */
+
 .header{
     width: 100%;
     height: 80px;
@@ -617,6 +619,8 @@ body{
     width: 28px;
 }
 
+/* product.html */
+
 .banner-section{
     position: relative;
     width: 100%;
@@ -855,6 +859,8 @@ body{
   text-decoration: none;
 }
 
+/* dashboard.html */
+
 .sidebar {
     width: 220px;
     height: 100vh;
@@ -984,3 +990,161 @@ th, td {
 .green-text {
     color: #4caf50;
 }
+
+/* checkout-product */
+
+.payment-details{
+    margin-top: 80px;
+    padding: 40px;
+}
+
+.payment-details h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.payment-grid{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn-add {
+  background: orange;
+  border: none;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.order-card {
+  display: flex;
+  align-items: center;
+  background: #fafafa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.order-card img {
+  width: 90px;
+  border-radius: 8px;
+}
+
+.order-info {
+  flex: 1;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+.badge-sale {
+  background: red;
+  color: #fff;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+.price .old {
+  text-decoration: line-through;
+  color: #aaa;
+  margin-right: 10px;
+}
+
+.price .new {
+  color: orange;
+  font-weight: bold;
+}
+
+.remove {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #c00;
+}
+
+.payment-info {
+  margin-top: 30px;
+}
+
+.payment-info h3{
+    padding-bottom: 30px;
+}
+
+.payment-info label {
+  display: block;
+  margin: 15px 0 6px;
+}
+
+.payment-info input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.delivery {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.delivery button {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delivery .active {
+  border-color: orange;
+  color: orange;
+}
+
+.right {
+  background: #fafafa;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+}
+
+.row.total {
+  font-weight: bold;
+}
+
+.checkout {
+  width: 100%;
+  background: orange;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.note {
+  font-size: 12px;
+  color: #777;
+  margin-top: 10px;
+}
+
+
+
