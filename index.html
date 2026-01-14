@@ -100,37 +100,13 @@
         </div>
 
         <div class="fav-card-area">
-            <div class="fav-item">
-                <img src="img/image 27.png" alt="">
+            <!-- <div class="fav-item">
+                <img src="img/image 27.png" alt="Hazelnut-Latte">
                 <h4>Hazelnut Latte</h4>
                 <p>You can explore the menu that we provide with fun and have their own taste.</p>
                 <span class="fav-price">IDR 20.000</span>
                 <a href="detail-product.html" class="fav-btn">Buy</a>
-            </div>
-
-            <div class="fav-item">
-                <img src="img/image 22.png" alt="">
-                <h4>Hazelnut Latte</h4>
-                <p>You can explore the menu that we provide with fun and have their own taste.</p>
-                <span class="fav-price">IDR 20.000</span>
-                <a href="detail-product.html" class="fav-btn">Buy</a>
-            </div>
-
-            <div class="fav-item">
-                <img src="img/image 30.png" alt="">
-                <h4>Hazelnut Latte</h4>
-                <p>You can explore the menu that we provide with fun and have their own taste.</p>
-                <span class="fav-price">IDR 20.000</span>
-                <a href="detail-product.html" class="fav-btn">Buy</a>
-            </div>
-
-            <div class="fav-item">
-                <img src="img/image 31.png" alt="">
-                <h4>Hazelnut Latte</h4>
-                <p>You can explore the menu that we provide with fun and have their own taste.</p>
-                <span class="fav-price">IDR 20.000</span>
-                <a href="detail-product.html" class="fav-btn">Buy</a>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -213,5 +189,69 @@
             </div>
         </div>
     </footer>
+
+
+    <script>
+        const menu = [
+            {
+                img : "/img/Image 27.png",
+                nameProduct : "Hazelnut Latte",
+                description : "You can explore the menu that we provide with fun and have their own taste.",
+                priceProduct : "IDR 20.000"
+            },
+            {
+                img : "/img/Image 22.png",
+                nameProduct : "Ice Frapucinno",
+                description : "You can explore the menu that we provide with fun and have their own taste.",
+                priceProduct : "IDR 30.000"
+            },
+            {
+                img : "/img/Image 30.png",
+                nameProduct : "Fish & Chips",
+                description : "You can explore the menu that we provide with fun and have their own taste.",
+                priceProduct : "IDR 50.000"
+            },
+            {
+                img : "/img/Image 31.png",
+                nameProduct : "Hot Latte",
+                description : "You can explore the menu that we provide with fun and have their own taste.",
+                priceProduct : "IDR 20.000"
+            }
+        ]
+
+        for(let i=0; i< menu.length; i++){
+            const displayMenu = document.querySelector(".fav-card-area")
+            const parent = document.createElement("div")
+            parent.setAttribute("class", "fav-item")
+            const imageProduct = document.createElement("img")
+            imageProduct.setAttribute("src", menu[i].img)
+            imageProduct.setAttribute("alt", "Hazelnut-Latte")
+
+            parent.append(imageProduct)
+            
+
+            const productName = document.createElement("h4")
+            productName.textContent = menu[i].nameProduct
+            parent.append(productName)
+
+            const descriptionProduct = document.createElement("p")
+            descriptionProduct.textContent = menu[i].description
+            parent.append(descriptionProduct)
+
+            const productPrice = document.createElement("span")
+            productPrice.setAttribute("class","fav-price")
+            productPrice.textContent = menu[i].priceProduct
+            parent.append(productPrice)
+
+            const buttonBuy = document.createElement("a")
+            buttonBuy.setAttribute("href", "detail-product.html")
+            buttonBuy.setAttribute("class", "fav-btn")
+            buttonBuy.textContent = "Buy"
+            parent.append(buttonBuy)
+            
+            displayMenu.append(parent)
+        }
+    </script>
 </body>
+
 </html>
