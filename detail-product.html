@@ -29,7 +29,7 @@
     </header>
 
     <section class="product-detail">
-        <div class="product-grid">
+         <div class="product-grid">
             <div class="product-images">
                 <img class="main-img" src="img/image 31.png" alt="Hazelnut Latte">
                 <div class="thumbs">
@@ -76,7 +76,7 @@
                     <button class="cart">🛒 add to cart</button>
                 </div>
             </div>
-        </div>
+        </div> 
 
         <h2 class="recommend-title">Recommendation For You</h2>
 
@@ -223,39 +223,95 @@
             }
         ]
 
-        const product = menu[0];
+        const params = new URLSearchParams(window.location.search);
+        const productId = params.get("id");
 
-        const productGrid = document.querySelector(".product-grid");
+        const id = Number(params.get("id"));
+        const product = menu.find(item => item.id === id);
+
         
-        const mainImg = productGrid.querySelector(".main-img");
-        mainImg.setAttribute("src", product.img.imageDepan);
-        mainImg.setAttribute("alt", product.nameProduct);
+        if (!product) {
+            alert("Product not found");
+        }
+        else{
+            const productGrid = document.createElement("div")
+            productGrid.className = "product-grid"
+    
+            const imageWrapper = document.createElement("div")
+            imageWrapper.className = "product-images"
 
-        const thumbs = productGrid.querySelectorAll(".thumbs img");
-        thumbs[0].setAttribute("src", product.img.imageKedua);
-        thumbs[1].setAttribute("src", product.img.imageKetiga);
-        thumbs[2].setAttribute("src", product.img.imageKeempat);
+            const mainImg = document.createElement("img")
+            mainImg.className = "main-img"
+            mainImg.src = product.img.imageDepan
+            mainImg.alt = product.nameProduct
 
-        const title = productGrid.querySelector(".product-info h1");
-        title.textContent = product.nameProduct;
+            const thumbs = document.createElement("div")
+            thumbs.className = "thumbs"
 
-        const desc = productGrid.querySelector(".desc");
-        desc.textContent = product.description;
+            const images = [
+                product.img.imageKedua,
+                product.img.imageKetiga,
+                product.img.imageKeempat
+            ];
 
-        const oldPrice = productGrid.querySelector(".price .old");
-        oldPrice.textContent = `IDR ${product.priceProduct}`;
+            images.forEach(src => {
+                const img = document.createElement("img")
+                img.src = src;
+                thumbs.appendChild(img)
+            });
 
-        const newPrice = productGrid.querySelector(".price .new");
-        newPrice.textContent = `IDR ${product.priceDiscount}`;
+            imageWrapper.append(mainImg, thumbs);
 
-        const ratingValue = productGrid.querySelector(".rating span");
-        ratingValue.textContent = "5.0";
+            const productInfo = document.createElement("div")
+            productInfo.className = "product-info"
 
-        const review = productGrid.querySelector(".review");
-        review.textContent = "200+ Review | Recommendation 👍";
+            const badge = document.createElement("span")
+            badge.className = "badge-sale"
+            badge.textContent = "FLASH SALE!"
 
-        const badge = productGrid.querySelector(".badge-sale");
-        badge.textContent = "FLASH SALE!";
+            const title = document.createElement("h1")
+            title.textContent = product.nameProduct
 
+            const desc = document.createElement("p")
+            desc.className = "desc"
+            desc.textContent = product.description
+
+            const price = document.createElement("div")
+            price.className = "price"
+
+            const oldPrice = document.createElement("span")
+            oldPrice.className = "old"
+            oldPrice.textContent = `IDR ${product.priceProduct}`
+
+            const newPrice = document.createElement("span");
+            newPrice.className = "new"
+            newPrice.textContent = `IDR ${product.priceDiscount}`
+
+            price.append(oldPrice, newPrice)
+
+            const rating = document.createElement("div")
+            rating.className = "rating"
+
+            const ratingValue = document.createElement("span");
+            ratingValue.textContent = "5.0";
+
+            rating.append(star, ratingValue);
+
+            const review = document.createElement("p");
+            review.className = "review";
+            review.textContent = "200+ Review | Recommendation 👍";
+
+            productInfo.append(
+                badge,
+                title,
+                desc,
+                price,
+                rating,
+                review
+            )
+
+            productGrid.append(imageWrapper, productInfo)
+            app.appendChild(productGrid)
+    }
     </script>
 </body>
