@@ -61,6 +61,25 @@
         </div>
     </div>
 </div>
+<script>
+    const form = document.querySelector("form");
+    const emailInput = document.querySelector('input[type="email"]');
+    const passwordInput = document.querySelector('input[type="password"]');
 
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // mencegah reload halaman
+
+        const email = emailInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        if (email === "koda@mail.com" && password === "1234") {
+            // jika login benar
+            window.location.href = "index.html";
+        } else {
+            // custom alert jika salah
+            alert("Email atau password yang Anda masukkan salah!");
+        }
+    });
+</script>
 </body>
 </html>
