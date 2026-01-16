@@ -8,23 +8,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
 </head>
 <body>
-    <header class="header">
-        <div class="navbar-container">
-            <div class="navbar-logo">
-                <img src="img/Logo-White.png" alt="Logo-White">
+    <header class="navbar">
+        <div class="nav-left">
+            <img src="img/logo.png" class="logo">
+            <nav class="nav-menu">
+                <a href="#" class="active">Home</a>
+                <a href="#">Product</a>
+            </nav>
+        </div>
+
+        <div class="nav-right">
+            <div class="nav-icons">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
             </div>
-            <div class="navbar-menu">
-                <a href="index.html" class="active">Home</a>
-                <a href="product.html">Product</a>
-            </div>
-            <div class="navbar-right">
-                <img src="img/icon/Search.png" class="nav-icon" alt="">
-                <img src="img/icon/ShoppingCart.png" class="nav-icon" alt="">
-                <a href="login.html" class="signin">Sign In</a>
-                <a href="register.html" class="signup">Sign Up</a>
-            </div>
+            <button class="btn-outline">Sign In</button>
+            <button class="btn-primary">Sign Up</button>
         </div>
     </header>
 
