@@ -37,7 +37,7 @@
                     <div class="input-box">
                         <img src="img/icon/Password.png">
                         <input type="password" placeholder="Enter Your Password">
-                        <img src="img/icon/EyeSlash.png" class="eye">
+                        <img src="img/icon/EyeSlash.png" class="eye" id="togglePassword">
                     </div>
                 </div>
 
@@ -65,19 +65,30 @@
     const form = document.querySelector("form");
     const emailInput = document.querySelector('input[type="email"]');
     const passwordInput = document.querySelector('input[type="password"]');
+    const togglePassword = document.getElementById("togglePassword");
 
     form.addEventListener("submit", function (e) {
-        e.preventDefault(); // mencegah reload halaman
+        e.preventDefault();
 
         const email = emailInput.value.trim();
         const password = passwordInput.value.trim();
 
         if (email === "koda@mail.com" && password === "1234") {
-            // jika login benar
             window.location.href = "index.html";
         } else {
-            // custom alert jika salah
             alert("Email atau password yang Anda masukkan salah!");
+        }
+    });
+
+    togglePassword.addEventListener("click", function () {
+        const type = passwordInput.getAttribute("type");
+
+        if (type === "password") {
+            passwordInput.setAttribute("type", "text");
+            togglePassword.src = "img/icon/Eye.png";
+        } else {
+            passwordInput.setAttribute("type", "password");
+            togglePassword.src = "img/icon/EyeSlash.png"; 
         }
     });
 </script>
