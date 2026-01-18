@@ -38,56 +38,60 @@
     <section class="promo-section">
         <div class="promo-header">
             <h2>Today <span>Promo</span></h2>
+
+            <div class="promo-nav">
+                <button class="btn-nav prev" id="promoPrev">←</button>
+                <button class="btn-nav next" id="promoNext">→</button>
+            </div>
         </div>
 
-        <div class="promo-nav">
-            <a href="#" class="nav-button"><img src="img/icon/back-grey-rounded.png"></a>
-            <a href="#" class="nav-button"><img src="img/icon/forward-orange.png"></a>
-        </div>
-    </section>
-
-    <section class="promo">
-        <div class="promo-carousel">
-            <div class="promo-track">
+        <div class="promo-slider">
+            <div class="promo-track" id="promoTrack">
 
                 <div class="promo-card green">
-                    <img src="img/person-product.png" alt="">
-                    <div class="promo-text">
-                        <h4>HAPPY MOTHER'S DAY</h4>
-                        <p>Get one of our favorite menu for free!</p>
-                        <small>Klaim Kupon</small>
-                    </div>
-                </div>
-
-                <div class="promo-card green">
-                    <img src="img/person-product.png" alt="">
-                    <div class="promo-text">
-                        <h4>HAPPY MOTHER'S DAY</h4>
-                        <p>Get one of our favorite menu for free!</p>
-                        <small>Klaim Kupon</small>
-                    </div>
-                </div>
-
-                <div class="promo-card green">
-                    <img src="img/person-product.png" alt="">
-                    <div class="promo-text">
-                        <h4>HAPPY MOTHER'S DAY</h4>
-                        <p>Get one of our favorite menu for free!</p>
-                        <small>Klaim Kupon</small>
-                    </div>
-                </div>
-
-                <div class="promo-card orange">
                     <img src="img/person2-product.png" alt="">
-                    <div class="promo-text">
-                        <h4>Get a cup of coffee for free <br> on sunday morning</h4>
-                        <p>Only at 7 to 9 am</p>
-                        <small>Klaim Kupon</small>
+                    <div>
+                        <h4>HAPPY MOTHER’S DAY!</h4>
+                        <p>Get one of our favorite menu for free!</p>
+                        <span>Klaim Kupon</span>
+                    </div>
+                </div>
+
+                <div class="promo-card green">
+                    <img src="img/person2-product.png" alt="">
+                    <div>
+                        <h4>HAPPY MOTHER’S DAY!</h4>
+                        <p>Get one of our favorite menu for free!</p>
+                        <span>Klaim Kupon</span>
+                    </div>
+                </div>
+
+                <div class="promo-card green">
+                    <img src="img/person2-product.png" alt="">
+                    <div>
+                        <h4>HAPPY MOTHER’S DAY!</h4>
+                        <p>Get one of our favorite menu for free!</p>
+                        <span>Klaim Kupon</span>
+                    </div>
+                </div>
+
+                <div class="promo-card yellow">
+                    <img src="img/person-product.png" alt="">
+                    <div>
+                        <h4>Free Coffee</h4>
+                        <p>Only at 7–9 AM</p>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="promo-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
     </section>
+
     
     <section class="product">
         <h2 class="product-title">Our <span>Product</span></h2>
@@ -237,4 +241,41 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+        const track = document.getElementById("promoTrack");
+        const cards = document.querySelectorAll(".promo-card");
+        const dots = document.querySelectorAll(".promo-dots .dot");
+
+        const prevBtn = document.getElementById("promoPrev");
+        const nextBtn = document.getElementById("promoNext");
+
+        let index = 0;
+        const cardWidth = cards[0].offsetWidth + 20;
+
+        function updateSlider() {
+            track.style.transform = `translateX(-${index * cardWidth}px)`;
+
+            dots.forEach(dot => dot.classList.remove("active"));
+            dots[index].classList.add("active");
+        }
+
+        nextBtn.addEventListener("click", function () {
+            if (index < cards.length - 1) {
+                index++;
+                updateSlider();
+            }
+        });
+
+        prevBtn.addEventListener("click", function () {
+            if (index > 0) {
+                index--;
+                updateSlider();
+            }
+        });
+
+    });
+    </script>
 </body>
