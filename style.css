@@ -709,70 +709,76 @@ body{
     font-size: 40px;
 }
 
-.promo-section{
-    width: 100%;
-    padding: 50px 8%;
-    box-sizing: border-box;
-    bottom: 100px;
-    position: relative;
-    top: -25px;
+.promo-section {
+    padding: 40px 0;
 }
 
-.promo-header{
-    position: relative;
-    margin-bottom: 25px;
+.promo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.promo-header h2{
-    font-size: 26px;
-    margin: 0;
+.promo-nav {
+    display: flex;
+    gap: 12px;
 }
 
-.promo-header span{
-    font-weight: normal;
-    color: #8E6447;
+.btn-nav {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
 }
 
-.promo-nav{
-    position: absolute;
-    right: 0;
-    padding-right: 100px;
-    bottom: 65px;
+.promo-slider {
+    overflow: hidden;
+    margin-top: 24px;
 }
 
-.promo-carousel{
-    width: 100%;
-    overflow-x: auto;
-    position: relative;
-    top: -50px;
+.promo-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s ease;
 }
 
-
-.promo-card{
-    float: left;
-    width: 306px;
-    height: 120px;
-    margin-right: 10px;
-    padding: 10px;
-    border-radius: 12px;
-    color: #fff;
+.promo-card {
+    min-width: 320px;
+    padding: 16px;
+    border-radius: 16px;
+    display: flex;
+    gap: 12px;
 }
 
-.promo-card img{
-    float: left;
-    width: 60px;
+.promo-card.green {
+    background: #8dbb8d;
 }
 
-.promo-text{
-    margin-left: 75px;
+.promo-card.yellow {
+    background: #ffcc66;
 }
 
-.green{
-    background: #8bbd8e;
+.promo-dots {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
 }
 
-.orange{
-    background:#f5a623;
+.promo-dots .dot {
+    width: 10px;
+    height: 10px;
+    background: #aaa;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.promo-dots .dot.active {
+    width: 20px;
+    background: #ff8a00;
+    border-radius: 10px;
 }
 
 .product {
