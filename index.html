@@ -283,6 +283,70 @@
             
             displayMenu.append(parent)
         }
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+
+        const testimonials = [
+            {
+                img: "img/Rectangle 295.png",
+                name: "Viezh Robert",
+                role: "Manager Coffee",
+                text: "Wow... I am very happy to spend my whole day here. The Wi-fi is good, and the coffee and meals tho. I like it here!! Very recommended!",
+                rating: "5.0"
+            },
+            {
+                img: "img/martin-madrazo.jpg",
+                name: "Martin Madrazo",
+                role: "Food Blogger",
+                text: "The coffee is amazing and the place is super cozy. Perfect for working!",
+                rating: "4.8"
+            },
+            {
+                img: "img/maria-veronica.jpg",
+                name: "Maria Veronica",
+                role: "Food Blogger",
+                text: "The coffee is very good taste and I wish can comeback soon or later.",
+                rating: "4.8"
+            }
+
+        ];
+
+        let index = 0;
+
+        const img = document.getElementById("testi-img");
+        const name = document.getElementById("testi-name");
+        const role = document.getElementById("testi-role");
+        const text = document.getElementById("testi-text");
+        const rating = document.getElementById("testi-rating");
+        const dots = document.querySelectorAll(".dot");
+
+        function updateTesti() {
+            img.src = testimonials[index].img;
+            name.textContent = testimonials[index].name;
+            role.textContent = testimonials[index].role;
+            text.textContent = testimonials[index].text;
+            rating.textContent = testimonials[index].rating;
+
+            dots.forEach(dot => dot.classList.remove("active"));
+            dots[index].classList.add("active");
+        }
+
+        nextBtn.addEventListener("click", function () {
+            index++;
+            if (index >= testimonials.length) index = 0;
+            updateTesti();
+        });
+
+        prevBtn.addEventListener("click", function () {
+            index--;
+            if (index < 0) index = testimonials.length - 1;
+            updateTesti();
+        });
+
+    });
     </script>
 </body>
 
