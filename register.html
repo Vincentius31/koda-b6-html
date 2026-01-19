@@ -89,51 +89,59 @@
     const form = document.getElementById("registerForm");
     const alertBox = document.getElementById("formAlert");
 
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
     form.addEventListener("submit", function (e) {
-    e.preventDefault();
+        e.preventDefault();
 
-    const fullName = form.querySelector('input[type="text"]').value.trim();
-    const email = form.querySelector('input[type="email"]').value.trim();
-    const password = form.querySelectorAll('input[type="password"]')[0].value;
-    const confirmPassword = form.querySelectorAll('input[type="password"]')[1].value;
+        const fullName = form.querySelector('input[type="text"]').value.trim();
+        const email = form.querySelector('input[type="email"]').value.trim();
+        const password = form.querySelectorAll('input[type="password"]')[0].value;
+        const confirmPassword = form.querySelectorAll('input[type="password"]')[1].value;
 
-    alertBox.style.display = "none";
+        alertBox.style.display = "none";
 
-    if (!fullName || !email || !password || !confirmPassword) {
-        showAlert("All fields are required");
-        return;
-    }
+        if (!fullName || !email || !password || !confirmPassword) {
+            showAlert("All fields are required");
+            return;
+        }
 
-    if (
-        !email.includes("@") ||
-        !email.includes(".") ||
-        email.indexOf("@") === 0 ||
-        email.lastIndexOf(".") === email.length - 1
-    ) {
-        showAlert("Invalid email format");
-        return;
-    }
+        if (!email.includes("@") || !email.includes(".") || email.indexOf("@") === 0 || email.lastIndexOf(".") === email.length - 1) {
+            showAlert("Invalid email format");
+            return;
+        }
 
-    if (email === "koda@mail.com") {
-        showAlert("Email already registered");
-        return;
-    }
+        const emailExists = users.some(user => user.email === email);
+        if (emailExists) {
+            showAlert("Email already registered");
+            return;
+        }
 
-    if (password.length < 8) {
-        showAlert("Password must be at least 8 characters");
-        return;
-    }
+        if (password.length < 8) {
+            showAlert("Password must be at least 8 characters");
+            return;
+        }
 
-    if (password !== confirmPassword) {
-        showAlert("Password and confirmation do not match");
-        return;
-    }
+        if (password !== confirmPassword) {
+            showAlert("Password and confirmation do not match");
+            return;
+        }
 
-    alertBox.style.display = "block";
-    alertBox.style.backgroundColor = "#e8f5e9";
-    alertBox.style.color = "#1b5e20";
-    alertBox.style.border = "1px solid #a5d6a7";
-    alertBox.innerText = "Registration successful!";
+        users.push({
+            fullName: fullName,
+            email: email,
+            password: password
+        });
+
+        localStorage.setItem("users", JSON.stringify(users));
+
+        alertBox.style.display = "block";
+        alertBox.style.backgroundColor = "#e8f5e9";
+        alertBox.style.color = "#1b5e20";
+        alertBox.style.border = "1px solid #a5d6a7";
+        alertBox.innerText = "Registration successful!";
+
+        form.reset();
     });
 
     function showAlert(message) {
@@ -160,6 +168,5 @@
         });
     });
 </script>
-
 </body>
 </html>
