@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register | Coffee Shop</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"crel="stylesheet">
     <!-- <link rel="stylesheet" href="style.css"> -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script data-main="js/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
 </head>
 
 <body class="font-sans bg-white">
@@ -98,90 +97,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        const form = document.getElementById("registerForm");
-        const alertBox = document.getElementById("formAlert");
-
-        let users = JSON.parse(localStorage.getItem("users")) || [];
-
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            const fullName = form.querySelector('input[type="text"]').value.trim();
-            const email = form.querySelector('input[type="email"]').value.trim();
-            const password = form.querySelectorAll('input[type="password"]')[0].value;
-            const confirmPassword = form.querySelectorAll('input[type="password"]')[1].value;
-
-            alertBox.style.display = "none";
-
-            if (!fullName || !email || !password || !confirmPassword) {
-                showAlert("All fields are required");
-                return;
-            }
-
-            if (!email.includes("@") || !email.includes(".") || email.indexOf("@") === 0 || email.lastIndexOf(".") === email.length - 1) {
-                showAlert("Invalid email format");
-                return;
-            }
-
-            const emailExists = users.some(user => user.email === email);
-            if (emailExists) {
-                showAlert("Email already registered");
-                return;
-            }
-
-            if (password.length < 8) {
-                showAlert("Password must be at least 8 characters");
-                return;
-            }
-
-            if (password !== confirmPassword) {
-                showAlert("Password and confirmation do not match");
-                return;
-            }
-
-            users.push({
-                fullName: fullName,
-                email: email,
-                password: password
-            });
-
-            localStorage.setItem("users", JSON.stringify(users));
-
-            alertBox.style.display = "block";
-            alertBox.style.backgroundColor = "#e8f5e9";
-            alertBox.style.color = "#1b5e20";
-            alertBox.style.border = "1px solid #a5d6a7";
-            alertBox.innerText = "Registration successful!";
-
-            form.reset();
-        });
-
-        function showAlert(message) {
-            alertBox.style.display = "block";
-            alertBox.style.backgroundColor = "#fdecea";
-            alertBox.style.color = "#b71c1c";
-            alertBox.style.border = "1px solid #f5c2c7";
-            alertBox.innerText = message;
-        }
-
-        const eyeIcons = document.querySelectorAll(".eye");
-
-        eyeIcons.forEach((eye) => {
-            eye.addEventListener("click", () => {
-                const input = eye.previousElementSibling;
-
-                if (input.type === "password") {
-                    input.type = "text";
-                    eye.src = "img/icon/Eye.png";
-                } else {
-                    input.type = "password";
-                    eye.src = "img/icon/EyeSlash.png";
-                }
-            });
-        });
-    </script>
 </body>
-
 </html>
