@@ -1,172 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register | Coffee Shop</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"crel="stylesheet">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
 
-<div class="register-container">
-    <div class="register-image">
-        <img src="img/Rectangle 289.png" alt="Coffee">
-    </div>
+<body class="font-sans bg-white">
 
-    <div class="register-form">
-        <div class="form-wrapper">
-            <img src="img/Logo-Brown.png" alt="Coffee Shop" class="logo">
+    <div class="flex min-h-screen flex-col md:flex-row">
+        <div class="md:w-[45%] w-full h-[220px] md:h-auto">
+            <img src="img/Rectangle 289.png" alt="Coffee" class="w-full h-full object-cover">
+        </div>
 
-            <h2>Register</h2>
-            <p class="content">Fill out the form correctly</p>
+        <div class="md:w-[55%] w-full flex items-center justify-center py-10">
+            <div class="w-[90%] md:w-[70%]">
+                <img src="img/Logo-Brown.png" alt="Coffee Shop" class="w-[120px] mb-5">
 
-            <div class="form-alert" id="formAlert"></div>
+                <h2 class="text-2xl font-semibold text-[#6b4f3f] mb-1">Register</h2>
+                <p class="text-gray-400 mb-6">Fill out the form correctly</p>
 
-            <form id="registerForm">
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <div class="input-box">
-                        <img src="img/icon/Profile.png">
-                        <input type="text" placeholder="Enter Your Full Name">
+                <div id="formAlert"
+                    class="hidden mb-4 rounded-lg border border-red-300 bg-red-100 px-4 py-3 text-sm text-red-700">
+                </div>
+
+                <form id="registerForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm mb-1">Full Name</label>
+                        <div class="flex items-center border rounded-md px-3 py-3">
+                            <img src="img/icon/Profile.png" class="w-4 mr-2">
+                            <input type="text" placeholder="Enter Your Full Name" class="w-full outline-none">
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label>Email</label>
-                    <div class="input-box">
-                        <img src="img/icon/mail.png">
-                        <input type="email" placeholder="Enter Your Email">
+                    <div>
+                        <label class="block text-sm mb-1">Email</label>
+                        <div class="flex items-center border rounded-md px-3 py-3">
+                            <img src="img/icon/mail.png" class="w-4 mr-2">
+                            <input type="email" placeholder="Enter Your Email" class="w-full outline-none">
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label>Password</label>
-                    <div class="input-box">
-                        <img src="img/icon/Password.png">
-                        <input type="password" placeholder="Enter Your Password">
-                        <img src="img/icon/EyeSlash.png" class="eye">
+                    <div>
+                        <label class="block text-sm mb-1">Password</label>
+                        <div class="flex items-center border rounded-md px-3 py-3">
+                            <img src="img/icon/Password.png" class="w-4 mr-2">
+                            <input type="password" placeholder="Enter Your Password" class="w-full outline-none">
+                            <img src="img/icon/EyeSlash.png" class="w-4 ml-2 cursor-pointer">
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label>Confirm Password</label>
-                    <div class="input-box">
-                        <img src="img/icon/Password.png">
-                        <input type="password" placeholder="Enter Your Password Again">
-                        <img src="img/icon/EyeSlash.png" class="eye">
+                    <div>
+                        <label class="block text-sm mb-1">Confirm Password</label>
+                        <div class="flex items-center border rounded-md px-3 py-3">
+                            <img src="img/icon/Password.png" class="w-4 mr-2">
+                            <input type="password" placeholder="Enter Your Password Again" class="w-full outline-none">
+                            <img src="img/icon/EyeSlash.png" class="w-4 ml-2 cursor-pointer">
+                        </div>
                     </div>
-                </div>
 
-                <button class="btn-register">Register</button>
+                    <button type="submit"
+                        class="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-md transition">
+                        Register
+                    </button>
 
-                <p class="login-text">
-                    Have An Account? <a href="login.html">Login</a>
-                </p>
+                    <p class="text-center text-sm mt-4">
+                        Have An Account?
+                        <a href="login.html" class="text-orange-500 hover:underline">Login</a>
+                    </p>
 
-                <div class="divider">
-                    <span></span>
-                    <p>Or</p>
-                    <span></span>
-                </div>
+                    <div class="flex items-center my-6">
+                        <span class="flex-1 h-px bg-gray-300"></span>
+                        <p class="mx-3 text-sm text-gray-400">Or</p>
+                        <span class="flex-1 h-px bg-gray-300"></span>
+                    </div>
 
-                <div class="social-login">
-                    <a href="#" class="social facebook">
-                        <img src="img/icon/bx_bxl-facebook-circle.png"> Facebook
-                    </a>
-                    <a href="#" class="social google">
-                        <img src="img/icon/flat-color-icons_google.png"> Google
-                    </a>
-                </div>
-            </form>
+                    <div class="grid grid-cols-2 gap-4">
+                        <a href="#"
+                            class="flex items-center justify-center gap-2 border rounded-md py-3 hover:bg-gray-100">
+                            <img src="img/icon/bx_bxl-facebook-circle.png" class="w-4">
+                            Facebook
+                        </a>
+
+                        <a href="#"
+                            class="flex items-center justify-center gap-2 border rounded-md py-3 hover:bg-gray-100">
+                            <img src="img/icon/flat-color-icons_google.png" class="w-4">
+                            Google
+                        </a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-    const form = document.getElementById("registerForm");
-    const alertBox = document.getElementById("formAlert");
+    <script>
+        const form = document.getElementById("registerForm");
+        const alertBox = document.getElementById("formAlert");
 
-    let users = JSON.parse(localStorage.getItem("users")) || [];
+        let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-        const fullName = form.querySelector('input[type="text"]').value.trim();
-        const email = form.querySelector('input[type="email"]').value.trim();
-        const password = form.querySelectorAll('input[type="password"]')[0].value;
-        const confirmPassword = form.querySelectorAll('input[type="password"]')[1].value;
+            const fullName = form.querySelector('input[type="text"]').value.trim();
+            const email = form.querySelector('input[type="email"]').value.trim();
+            const password = form.querySelectorAll('input[type="password"]')[0].value;
+            const confirmPassword = form.querySelectorAll('input[type="password"]')[1].value;
 
-        alertBox.style.display = "none";
+            alertBox.style.display = "none";
 
-        if (!fullName || !email || !password || !confirmPassword) {
-            showAlert("All fields are required");
-            return;
-        }
-
-        if (!email.includes("@") || !email.includes(".") || email.indexOf("@") === 0 || email.lastIndexOf(".") === email.length - 1) {
-            showAlert("Invalid email format");
-            return;
-        }
-
-        const emailExists = users.some(user => user.email === email);
-        if (emailExists) {
-            showAlert("Email already registered");
-            return;
-        }
-
-        if (password.length < 8) {
-            showAlert("Password must be at least 8 characters");
-            return;
-        }
-
-        if (password !== confirmPassword) {
-            showAlert("Password and confirmation do not match");
-            return;
-        }
-
-        users.push({
-            fullName: fullName,
-            email: email,
-            password: password
-        });
-
-        localStorage.setItem("users", JSON.stringify(users));
-
-        alertBox.style.display = "block";
-        alertBox.style.backgroundColor = "#e8f5e9";
-        alertBox.style.color = "#1b5e20";
-        alertBox.style.border = "1px solid #a5d6a7";
-        alertBox.innerText = "Registration successful!";
-
-        form.reset();
-    });
-
-    function showAlert(message) {
-        alertBox.style.display = "block";
-        alertBox.style.backgroundColor = "#fdecea";
-        alertBox.style.color = "#b71c1c";
-        alertBox.style.border = "1px solid #f5c2c7";
-        alertBox.innerText = message;
-    }
-
-    const eyeIcons = document.querySelectorAll(".eye");
-
-    eyeIcons.forEach((eye) => {
-        eye.addEventListener("click", () => {
-            const input = eye.previousElementSibling;
-
-            if (input.type === "password") {
-                input.type = "text";
-                eye.src = "img/icon/Eye.png";
-            } else {
-                input.type = "password";
-                eye.src = "img/icon/EyeSlash.png";
+            if (!fullName || !email || !password || !confirmPassword) {
+                showAlert("All fields are required");
+                return;
             }
+
+            if (!email.includes("@") || !email.includes(".") || email.indexOf("@") === 0 || email.lastIndexOf(".") === email.length - 1) {
+                showAlert("Invalid email format");
+                return;
+            }
+
+            const emailExists = users.some(user => user.email === email);
+            if (emailExists) {
+                showAlert("Email already registered");
+                return;
+            }
+
+            if (password.length < 8) {
+                showAlert("Password must be at least 8 characters");
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                showAlert("Password and confirmation do not match");
+                return;
+            }
+
+            users.push({
+                fullName: fullName,
+                email: email,
+                password: password
+            });
+
+            localStorage.setItem("users", JSON.stringify(users));
+
+            alertBox.style.display = "block";
+            alertBox.style.backgroundColor = "#e8f5e9";
+            alertBox.style.color = "#1b5e20";
+            alertBox.style.border = "1px solid #a5d6a7";
+            alertBox.innerText = "Registration successful!";
+
+            form.reset();
         });
-    });
-</script>
+
+        function showAlert(message) {
+            alertBox.style.display = "block";
+            alertBox.style.backgroundColor = "#fdecea";
+            alertBox.style.color = "#b71c1c";
+            alertBox.style.border = "1px solid #f5c2c7";
+            alertBox.innerText = message;
+        }
+
+        const eyeIcons = document.querySelectorAll(".eye");
+
+        eyeIcons.forEach((eye) => {
+            eye.addEventListener("click", () => {
+                const input = eye.previousElementSibling;
+
+                if (input.type === "password") {
+                    input.type = "text";
+                    eye.src = "img/icon/Eye.png";
+                } else {
+                    input.type = "password";
+                    eye.src = "img/icon/EyeSlash.png";
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
