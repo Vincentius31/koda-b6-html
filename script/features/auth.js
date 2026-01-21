@@ -4,12 +4,32 @@ define(['validation', 'storage'], function (validation, storage) {
         const form = document.getElementById('registerForm');
         const alertBox = document.getElementById('formAlert');
 
-        if (!form) return;
+        if (!form || !alertBox) return;
+
+        const eyes = form.querySelectorAll('.eye');
+
+        eyes.forEach(function (eye) {
+            eye.addEventListener('click', function () {
+                const input = eye.closest('.input-box').querySelector('input');
+
+                if (!input) return;
+
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    eye.src = 'img/icon/eye.png';
+                } else {
+                    input.type = 'password';
+                    eye.src = 'img/icon/EyeSlash.png';
+                }
+            });
+        });
+
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
             const inputs = form.querySelectorAll('input');
+
             const fullName = inputs[0].value;
             const email = inputs[1].value;
             const password = inputs[2].value;
@@ -24,41 +44,34 @@ define(['validation', 'storage'], function (validation, storage) {
             }
 
             if (!validation.isPasswordValid(password)) {
-                return showError('Password must be at least 6 characters');
+                return showError('Password minimum 6 characters');
             }
 
             if (!validation.isPasswordMatch(password, confirmPassword)) {
-                return showError('Password confirmation does not match');
+                return showError('Password does not match');
             }
-
-            const encodedPassword = storage.encodeBase64(password);
 
             storage.saveUser({
                 fullName,
                 email,
-                password: encodedPassword
+                password: storage.encodeBase64(password)
             });
 
-            showSuccess('Register success!');
+            showSuccess('Register success');
             form.reset();
         });
 
-        function showError(message) {
+        function showError(msg) {
             alertBox.style.display = 'block';
-            alertBox.textContent = message;
-            alertBox.className =
-                'form-alert bg-red-100 text-red-700 border border-red-300 px-4 py-3 rounded-lg text-sm mb-4';
+            alertBox.textContent = msg;
         }
 
-        function showSuccess(message) {
+        function showSuccess(msg) {
             alertBox.style.display = 'block';
-            alertBox.textContent = message;
-            alertBox.className =
-                'form-alert bg-green-100 text-green-700 border border-green-300 px-4 py-3 rounded-lg text-sm mb-4';
+            alertBox.textContent = msg;
         }
     }
 
-    return {
-        init
-    };
+    return { init };
 });
+
