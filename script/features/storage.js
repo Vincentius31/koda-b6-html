@@ -17,9 +17,15 @@ define(function () {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(users));
     }
 
+    function isEmailExists(email){
+        const users = getUsers();
+        return users.some(user => user.email === email)
+    }
+
     return {
         encodeBase64,
         saveUser,
-        getUsers
+        getUsers,
+        isEmailExists,
     };
 });
