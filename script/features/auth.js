@@ -43,6 +43,10 @@ define(['validation', 'storage'], function (validation, storage) {
                 return showError('Email format is invalid');
             }
 
+            if(storage.isEmailExists(email)){
+                return showError('Email already registered')
+            }
+
             if (!validation.isPasswordValid(password)) {
                 return showError('Password minimum 6 characters');
             }
