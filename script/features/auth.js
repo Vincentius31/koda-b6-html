@@ -62,7 +62,10 @@ define(['validation', 'storage'], function (validation, storage) {
             });
 
             showSuccess('Register success');
-            form.reset();
+            
+            setTimeout(()=> {
+                window.location.href = "login.html";
+            }, 1200);
         });
 
         function showError(msg) {
