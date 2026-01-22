@@ -1,96 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Coffee Shop</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="script/login-form.js"></script>
 </head>
+
 <body>
 
-<div class="register-container">
-    <div class="register-image">
-        <img src="img/Rectangle 290.png" alt="Coffee">
-    </div>
+    <div class="register-container">
+        <div class="register-image">
+            <img src="img/Rectangle 290.png" alt="Coffee">
+        </div>
 
-    <div class="register-form">
-        <div class="form-wrapper">
-            <img src="img/Logo-Brown.png" alt="Coffee Shop" class="logo">
+        <div class="register-form">
+            <div class="form-wrapper">
+                <img src="img/Logo-Brown.png" alt="Coffee Shop" class="logo">
 
-            <h2>Login</h2>
-            <p class="content">Fill out the form correctly</p>
+                <h2>Login</h2>
+                <p class="content">Fill out the form correctly</p>
 
-            <form>
-                <div class="form-group">
-                    <label>Email</label>
-                    <div class="input-box">
-                        <img src="img/icon/mail.png">
-                        <input type="email" placeholder="Enter Your Email">
+                <div class="form-alert" id="loginAlert"></div>
+
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <div class="input-box">
+                            <img src="img/icon/mail.png">
+                            <input id="loginEmail" type="email" placeholder="Enter Your Email">
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label>Password</label>
-                    <div class="input-box">
-                        <img src="img/icon/Password.png">
-                        <input type="password" placeholder="Enter Your Password">
-                        <img src="img/icon/EyeSlash.png" class="eye" id="togglePassword">
+                    <div class="form-group">
+                        <label>Password</label>
+                        <div class="input-box">
+                            <img src="img/icon/Password.png">
+                            <input id="loginPassword" type="password" placeholder="Enter Your Password">
+                            <img src="img/icon/EyeSlash.png" class="eye" id="togglePassword">
+                        </div>
                     </div>
-                </div>
 
-                <a href="forgot-pass.html" class="forgot-pass">Lupa Password</a>
+                    <a href="forgot-pass.html" class="forgot-pass">Lupa Password</a>
 
-                <button class="btn-register">Login</button>
+                    <button class="btn-register">Login</button>
 
-                <p class="login-text">
-                    Not Have An Account? <a href="register.html">Register</a>
-                </p>
+                    <p class="login-text">
+                        Not Have An Account? <a href="register.html">Register</a>
+                    </p>
 
-                <div class="social-login">
-                    <a href="#" class="social facebook">
-                        <img src="img/icon/bx_bxl-facebook-circle.png"> Facebook
-                    </a>
-                    <a href="#" class="social google">
-                        <img src="img/icon/flat-color-icons_google.png"> Google
-                    </a>
-                </div>
-            </form>
+                    <div class="social-login">
+                        <a href="#" class="social facebook">
+                            <img src="img/icon/bx_bxl-facebook-circle.png"> Facebook
+                        </a>
+                        <a href="#" class="social google">
+                            <img src="img/icon/flat-color-icons_google.png"> Google
+                        </a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-<script>
-    const form = document.querySelector("form");
-    const emailInput = document.querySelector('input[type="email"]');
-    const passwordInput = document.querySelector('input[type="password"]');
-    const togglePassword = document.getElementById("togglePassword");
+    
+    <script src="script/login.js"></script>
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const email = emailInput.value.trim();
-        const password = passwordInput.value.trim();
-
-        if (email === "koda@mail.com" && password === "1234") {
-            window.location.href = "index.html";
-        } else {
-            alert("Email atau password yang Anda masukkan salah!");
-        }
-    });
-
-    togglePassword.addEventListener("click", function () {
-        const type = passwordInput.getAttribute("type");
-
-        if (type === "password") {
-            passwordInput.setAttribute("type", "text");
-            togglePassword.src = "img/icon/Eye.png";
-        } else {
-            passwordInput.setAttribute("type", "password");
-            togglePassword.src = "img/icon/EyeSlash.png"; 
-        }
-    });
-</script>
 </body>
+
 </html>
