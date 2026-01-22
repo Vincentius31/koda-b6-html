@@ -8,9 +8,17 @@ $(document).ready(function () {
 
   if (user) {
     navAuth.html(`
+      <a href="#" class="hover:text-orange-400 transition">
+        <img src="img/icon/Search.png" alt="Bag" class="w-5 h-5">
+      </a>
+
+      <a href="checkout-product.html" class="hover:text-orange-400 transition">
+          <img src="img/icon/ShoppingCart.png" alt="Cart" class="w-5 h-5">
+      </a>
+      
       <a href="profile.html"
         class="border border-white text-white px-5 py-2 rounded-lg text-sm hover:border-orange-400 transition">
-        ${user.fullName}
+        Profile
       </a>
 
       <button id="btnLogout"
